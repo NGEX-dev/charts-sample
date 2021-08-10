@@ -1,6 +1,7 @@
 window.addEventListener('load', (event) => {
     barChartGrouped();
     barChart();
+    barChartLessData();
     horizontalChart();
     horizontalGroupedChart();
     pieChart();
@@ -182,7 +183,7 @@ function barChart() {
     });
 }
 
-function barChartMobileLessData() {
+function barChartLessData() {
     const ctx = document.getElementById('barChartLessData').getContext('2d');
     const myChart = new Chart(ctx, {
         type: 'bar',
@@ -192,6 +193,7 @@ function barChartMobileLessData() {
             labels: ['2015-01', '2015-02'],
             datasets: [
                 {
+                    maxBarThickness: 100,
                     label: '# of',
                     data: [12, 3],
                     backgroundColor: [
