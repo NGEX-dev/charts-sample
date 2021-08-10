@@ -30,6 +30,15 @@ function barChartGrouped() {
         options: {
             responsive: true,
             plugins: {
+                legend: {
+                    display: true,
+                    labels: {
+                        font: {
+                            size: 16,
+                            weight: 'bold',
+                        },
+                    },
+                },
                 datalabels: {
                     anchor: 'end',
                     align: 'end',
@@ -124,6 +133,15 @@ function barChart() {
         },
         options: {
             plugins: {
+                legend: {
+                    display: true,
+                    labels: {
+                        font: {
+                            size: 16,
+                            weight: 'bold',
+                        },
+                    },
+                },
                 datalabels: {
                     anchor: 'end',
                     align: 'end',
@@ -143,9 +161,6 @@ function barChart() {
             title: {
                 display: false,
                 text: 'Population growth (millions)',
-            },
-            legend: {
-                display: false,
             },
             hover: {
                 animationDuration: 0,
@@ -167,6 +182,100 @@ function barChart() {
     });
 }
 
+function barChartMobileLessData() {
+    const ctx = document.getElementById('barChartLessData').getContext('2d');
+    const myChart = new Chart(ctx, {
+        type: 'bar',
+        plugins: [ChartDataLabels],
+        scaleLineColor: 'rgba(0,0,0,0)',
+        data: {
+            labels: ['2015-01', '2015-02'],
+            datasets: [
+                {
+                    label: '# of',
+                    data: [12, 3],
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(153, 102, 255, 1)',
+                        'rgba(255, 159, 64, 1)',
+                        'rgba(255, 99, 132, 1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(153, 102, 255, 1)',
+                        'rgba(255, 159, 64, 1)',
+                    ],
+                    borderColor: [
+                        'rgba(255,99,132,1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(153, 102, 255, 1)',
+                        'rgba(255, 159, 64, 1)',
+                        'rgba(255,99,132,1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(153, 102, 255, 1)',
+                        'rgba(255, 159, 64, 1)',
+                    ],
+                    borderWidth: 1,
+                },
+            ],
+        },
+        options: {
+            responsive: true,
+            plugins: {
+                legend: {
+                    labels: {
+                        font: {
+                            size: 16,
+                            weight: 'bold',
+                        },
+                    },
+                },
+                datalabels: {
+                    anchor: 'end',
+                    align: 'end',
+                    formatter: (value) => {
+                        return value + '%';
+                    },
+                    font: {
+                        size: 14,
+                        weight: 'bold',
+                    },
+                },
+            },
+            showDatapoints: true,
+            tooltips: {
+                enabled: false,
+            },
+            title: {
+                display: false,
+                text: 'Population growth (millions)',
+            },
+            hover: {
+                animationDuration: 0,
+            },
+            scales: {
+                x: {
+                    grid: {
+                        display: false,
+                    },
+                },
+
+                y: {
+                    grid: {
+                        display: false,
+                    },
+                },
+            },
+        },
+    });
+}
 function horizontalChart() {
     const ctx = document.getElementById('HorizontalBarchart').getContext('2d');
     var myChart = new Chart(ctx, {
@@ -252,6 +361,15 @@ function horizontalChart() {
                 animationDuration: 0,
             },
             plugins: {
+                legend: {
+                    display: true,
+                    labels: {
+                        font: {
+                            size: 16,
+                            weight: 'bold',
+                        },
+                    },
+                },
                 datalabels: {
                     anchor: 'end',
                     align: 'end',
@@ -292,6 +410,15 @@ function horizontalGroupedChart() {
         options: {
             indexAxis: 'y',
             plugins: {
+                legend: {
+                    display: true,
+                    labels: {
+                        font: {
+                            size: 16,
+                            weight: 'bold',
+                        },
+                    },
+                },
                 datalabels: {
                     anchor: 'end',
                     align: 'start',
@@ -317,13 +444,6 @@ function horizontalGroupedChart() {
                         display: false,
                     },
                 },
-            },
-            title: {
-                display: false,
-                text: 'Population growth (millions)',
-            },
-            legend: {
-                display: false,
             },
         },
     });
@@ -356,7 +476,7 @@ function pieChart() {
                     anchor: 'end',
                     align: 'end',
                     formatter: (value) => {
-                        return value + '%';
+                        return value + '';
                     },
                     font: {
                         size: 18,
@@ -365,6 +485,13 @@ function pieChart() {
                 },
                 legend: {
                     position: 'right',
+                    labels: {
+                        padding: 20,
+                        font: {
+                            size: 16,
+                            weight: 'bold',
+                        },
+                    },
                 },
             },
             title: {

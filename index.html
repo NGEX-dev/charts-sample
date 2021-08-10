@@ -14,6 +14,7 @@
         <script src="https://cdn.jsdelivr.net/npm/chart.js@3.5.0/dist/chart.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
         <script src="js/charts-main.js"></script>
+        <script src="js/charts-main-mobile.js"></script>
     </head>
     <body class="table-page">
         <div id="wrapper">
@@ -66,31 +67,65 @@
             <main class="main">
                 <div class="container">
                     <div class="charts-area">
-                        <div class="chart-holder">
+                        <div class="chart-holder visible-mobile">
+                            <h2>Bar Chart</h2>
+                            <canvas id="barChartMobile" style="width: 100%; height: 350px"></canvas>
+                        </div>
+                        <div class="chart-holder visible-desktop">
                             <h2>Bar Chart</h2>
                             <canvas id="barChart" style="width: 100%; height: 350px"></canvas>
                         </div>
-                        <div class="chart-holder">
+                        <div class="chart-holder visible-mobile">
+                            <h2>Bar Chart (less data)</h2>
+                            <canvas id="barChartMobileLessData" style="width: 100%; height: 350px"></canvas>
+                        </div>
+                        <div class="chart-holder visible-desktop">
+                            <h2>Bar Chart (less data)</h2>
+                            <canvas id="barChartLessData" style="width: 100%; height: 350px"></canvas>
+                        </div>
+                        <div class="chart-holder visible-mobile">
+                            <h2>Line Chart</h2>
+                            <canvas id="lineChartMobile" style="width: 100%; height: 350px"></canvas>
+                        </div>
+                        <div class="chart-holder visible-desktop">
                             <h2>Line Chart</h2>
                             <canvas id="lineChart" style="width: 100%; height: 350px"></canvas>
                         </div>
-                        <div class="chart-holder">
+                        <div class="chart-holder visible-mobile">
+                            <h2>Pie Chart</h2>
+                            <div>
+                                <canvas id="pieChartMobile"></canvas>
+                            </div>
+                        </div>
+                        <div class="chart-holder visible-desktop">
                             <h2>Pie Chart</h2>
                             <div style="width: 75%; margin: 0 auto">
                                 <canvas id="pieChart"></canvas>
                             </div>
                         </div>
-                        <div class="chart-holder">
+                        <div class="chart-holder visible-mobile">
+                            <h2>Horizontal Chart</h2>
+                            <canvas id="HorizontalBarchartMobile" style="width: 100%; height: 350px"></canvas>
+                        </div>
+                        <div class="chart-holder visible-desktop">
                             <h2>Horizontal Chart</h2>
                             <canvas id="HorizontalBarchart" style="width: 100%; height: 350px"></canvas>
                         </div>
-                        <div class="chart-holder">
+                        <div class="chart-holder visible-desktop">
                             <h2>Group Bar Chart</h2>
                             <canvas id="bar-chart-grouped" style="width: 100%; height: 350px"></canvas>
                         </div>
-                        <div class="chart-holder">
+                        <div class="chart-holder visible-mobile">
+                            <h2>Group Bar Chart</h2>
+                            <canvas id="bar-chart-grouped-mobile" style="width: 100%; height: 350px"></canvas>
+                        </div>
+                        <div class="chart-holder visible-desktop">
                             <h2>Group Bar Horizontal Chart</h2>
                             <canvas id="bar-chart-Horizontalgrouped" style="width: 100%; height: 350px"></canvas>
+                        </div>
+                        <div class="chart-holder visible-mobile">
+                            <h2>Group Bar Horizontal Chart</h2>
+                            <canvas id="bar-chart-Horizontalgrouped-mobile" style="width: 100%; height: 350px"></canvas>
                         </div>
                     </div>
                 </div>
