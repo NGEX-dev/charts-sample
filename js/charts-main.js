@@ -1,4 +1,5 @@
 window.addEventListener('load', (event) => {
+    Chart.defaults.font.size = 18;
     barChartGrouped();
     barChart();
     barChartLessData();
@@ -64,6 +65,11 @@ function barChartGrouped() {
                     grid: {
                         display: false,
                     },
+                    ticks: {
+                        font: {
+                            size: 18,
+                        },
+                    },
                 },
 
                 y: {
@@ -83,18 +89,18 @@ function barChart() {
         scaleLineColor: 'rgba(0,0,0,0)',
         data: {
             labels: [
-                '2015-01',
-                '2015-02',
-                '2015-03',
-                '2015-04',
-                '2015-05',
-                '2015-06',
-                '2015-07',
-                '2015-08',
-                '2015-09',
-                '2015-10',
-                '2015-11',
-                '2015-12',
+                '2010-01-30',
+                '2011-02-28',
+                '2012-03-30',
+                '2013-04-30',
+                '2014-05-30',
+                '2015-06-30',
+                '2016-07-30',
+                '2017-08-30',
+                '2018-09-30',
+                '2019-10-30',
+                '2020-11-30',
+                '2021-12-30',
             ],
             datasets: [
                 {
@@ -170,6 +176,11 @@ function barChart() {
                 x: {
                     grid: {
                         display: false,
+                    },
+                    ticks: {
+                        callback: function (value) {
+                            return this.getLabelForValue(value).substr(0, 4);
+                        },
                     },
                 },
 
@@ -395,17 +406,17 @@ function horizontalGroupedChart() {
         type: 'bar',
         plugins: [ChartDataLabels],
         data: {
-            labels: ['1900', '1950', '1999', '2050'],
+            labels: ['1900', '1925', '1950', '1975', '1999', '2025', '2050', '2075'],
             datasets: [
                 {
                     label: 'Africa',
                     backgroundColor: 'rgba(255,99,132,1)',
-                    data: [133, 221, 783, 2478],
+                    data: [133, 221, 443, 534, 783, 1040, 2478, 3055],
                 },
                 {
                     label: 'Europe',
                     backgroundColor: 'rgba(54, 162, 235, 1)',
-                    data: [408, 547, 675, 734],
+                    data: [408, 499, 547, 576, 675, 734, 760, 800],
                 },
             ],
         },
