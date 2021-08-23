@@ -2,6 +2,7 @@ window.addEventListener('load', (event) => {
     Chart.defaults.font.size = 18;
     barChartGrouped();
     barChart();
+    barChartLarge();
     barChartLessData();
     horizontalChart();
     horizontalGroupedChart();
@@ -81,6 +82,7 @@ function barChartGrouped() {
         },
     });
 }
+
 function barChart() {
     const ctx = document.getElementById('barChart').getContext('2d');
     const myChart = new Chart(ctx, {
@@ -100,12 +102,13 @@ function barChart() {
                 '2018-09-30',
                 '2019-10-30',
                 '2020-11-30',
-                '2021-12-30',
             ],
             datasets: [
                 {
                     label: '# of',
-                    data: [12, 19, 3, 5, 21, 3, 16, 3, 5, 6, 2, 11],
+                    data: [
+                        12, 19, 3, 5, 21, 3, 16, 3, 5, 6, 2
+                    ],
                     backgroundColor: [
                         'rgba(255, 99, 132, 1)',
                         'rgba(54, 162, 235, 1)',
@@ -158,6 +161,173 @@ function barChart() {
                     font: {
                         size: 16,
                         weight: 'bold',
+                    },
+                },
+            },
+            showDatapoints: true,
+            tooltips: {
+                enabled: false,
+            },
+            title: {
+                display: false,
+                text: 'Population growth (millions)',
+            },
+            hover: {
+                animationDuration: 0,
+            },
+            scales: {
+                x: {
+                    grid: {
+                        display: false,
+                    },
+                    ticks: {
+                        callback: function (value) {
+                            return this.getLabelForValue(value).substr(0, 4);
+                        },
+                    },
+                },
+
+                y: {
+                    grid: {
+                        display: false,
+                    },
+                },
+            },
+        },
+    });
+}
+
+function barChartLarge() {
+    const ctx = document.getElementById('barChartLarge').getContext('2d');
+    const myChart = new Chart(ctx, {
+        type: 'bar',
+        plugins: [ChartDataLabels],
+        scaleLineColor: 'rgba(0,0,0,0)',
+        data: {
+            labels: [
+                '2010-01-30',
+                '2011-02-28',
+                '2012-03-30',
+                '2013-04-30',
+                '2014-05-30',
+                '2015-06-30',
+                '2016-07-30',
+                '2017-08-30',
+                '2018-09-30',
+                '2019-10-30',
+                '2020-11-30',
+                '2010-01-30',
+                '2011-02-28',
+                '2012-03-30',
+                '2013-04-30',
+                '2014-05-30',
+                '2015-06-30',
+                '2016-07-30',
+                '2017-08-30',
+                '2018-09-30',
+                '2019-10-30',
+                '2020-11-30',
+                '2021-12-30',
+                '2021-12-30',
+                '2010-01-30',
+                '2011-02-28',
+                '2012-03-30',
+                '2013-04-30',
+                '2014-05-30',
+                '2015-06-30',
+                '2016-07-30',
+                '2017-08-30',
+                '2018-09-30',
+                '2019-10-30',
+                '2020-11-30',
+                '2010-01-30',
+                '2011-02-28',
+                '2012-03-30',
+                '2013-04-30',
+                '2014-05-30',
+                '2015-06-30',
+                '2016-07-30',
+                '2017-08-30',
+                '2018-09-30',
+                '2019-10-30',
+                '2020-11-30',
+                '2021-12-30',
+                '2021-12-30',
+            ],
+            datasets: [
+                {
+                    label: '# of',
+                    data: [
+                        12, 19, 3, 5, 21, 3, 16, 3, 5, 6, 2, 11, 12, 19, 3, 5, 21, 3, 16, 3, 5, 6, 2, 11, 12, 19, 3, 5,
+                        21, 3, 16, 3, 5, 6, 2, 11, 12, 19, 3, 5, 21, 3, 16, 3, 5, 6, 2, 11,
+                    ],
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(153, 102, 255, 1)',
+                        'rgba(255, 159, 64, 1)',
+                        'rgba(255, 99, 132, 1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(153, 102, 255, 1)',
+                        'rgba(255, 159, 64, 1)',
+                    ],
+                    borderColor: [
+                        'rgba(255,99,132,1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(153, 102, 255, 1)',
+                        'rgba(255, 159, 64, 1)',
+                        'rgba(255,99,132,1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(153, 102, 255, 1)',
+                        'rgba(255, 159, 64, 1)',
+                    ],
+                    borderWidth: 1,
+                },
+            ],
+        },
+        options: {
+            plugins: {
+                legend: {
+                    display: true,
+                    labels: {
+                        font: {
+                            size: 16,
+                            weight: 'bold',
+                        },
+                    },
+                },
+                datalabels: {
+                    anchor: 'end',
+                    align: 'end',
+                    formatter: (value) => {
+                        return value + '%';
+                    },
+                    font: {
+                        size: 16,
+                        weight: 'bold',
+                    },
+                },
+                zoom: {
+                    pan: {
+                        enabled: true,
+                        mode: 'x',
+                    },
+                    zoom: {
+                        wheel: {
+                            enabled: true,
+                        },
+                        pinch: {
+                            enabled: true,
+                        },
+                        mode: 'x',
                     },
                 },
             },

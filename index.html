@@ -11,8 +11,11 @@
         />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
         <link media="all" rel="stylesheet" href="css/main.css" />
+        <script src="https://cdn.jsdelivr.net/npm/hammerjs@2.0.8"></script>
+
         <script src="https://cdn.jsdelivr.net/npm/chart.js@3.5.0/dist/chart.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
+        <script src="../node_modules/chartjs-plugin-zoom/dist/chartjs-plugin-zoom.js"></script>
         <script src="js/charts-main.js"></script>
         <script src="js/charts-main-mobile.js"></script>
     </head>
@@ -74,6 +77,21 @@
                         <div class="chart-holder visible-desktop">
                             <h2>Bar Chart</h2>
                             <canvas id="barChart" style="width: 100%; height: 350px"></canvas>
+                            <p style="text-align: right; font-size: 0.8rem"></p>
+                        </div>
+                        <div class="chart-holder visible-desktop">
+                            <h2>Bar Chart</h2>
+                            <canvas id="barChartLarge" style="width: 100%; height: 350px"></canvas>
+                            <p style="text-align: right; font-size: 0.8rem">
+                                You can zoom in/out and pan using mouse wheel and drag.
+                            </p>
+                        </div>
+                        <div class="chart-holder visible-mobile">
+                            <h2>Bar Chart</h2>
+                            <canvas id="barChartLargeMobile" style="width: 100%; height: 350px"></canvas>
+                            <p style="text-align: right; font-size: 0.8rem">
+                                You can zoom in/out and pan using mouse wheel and drag.
+                            </p>
                         </div>
                         <div class="chart-holder visible-mobile">
                             <h2>Bar Chart (less data)</h2>
